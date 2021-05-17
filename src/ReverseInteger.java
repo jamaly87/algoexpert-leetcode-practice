@@ -9,7 +9,24 @@ public class ReverseInteger {
         return temp;
     }
 
+    public static int reverseInt2 (int n){
+        char[] chars = Integer.toString(n).toCharArray();
+        int start = 0;
+        int end =chars.length-1;
+        char temp;
+        while (start<end){
+            temp=chars[start];
+            chars[start]=chars[end];
+            chars[end]=temp;
+            start++;
+            end--;
+        }
+        return Integer.valueOf(String.valueOf(chars));
+
+    }
+
     public static void main(String[] args) {
         System.out.println(reverseInt(123));
+        System.out.println(reverseInt2(12345));
     }
 }
